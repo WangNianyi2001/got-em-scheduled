@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	req.addEventListener('readystatechange', function() {
 		if(this.readyState === 4 && this.status === 200) {
 			loadSuccess('default schedule');
-			handleJSON(this.result);
+			handleJSON(this.responseText);
 		}
 	});
 	req.open('GET', 'schedule.json');
@@ -26,8 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function handleJSON(json) {
 	try {
-		handleSchedule(parseSchedule(json))
-	} catch(e) { return loadFail(e); }
+		handleSchedule(parseSchedule(json));
+	} catch(e) {
+		console.log(json);
+		loadFail(e);
+	}
 }
 function loadSuccess(name) { $('#filename').innerText = 'Imported ' + name; }
 function loadFail(e) {
