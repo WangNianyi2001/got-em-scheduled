@@ -1,0 +1,226 @@
+[
+	{
+		"name": "大学生心理健康教育",
+		"lecturer": "周曦",
+		"location": "四十八教B702-触控",
+		"week": [
+			3,
+			10
+		],
+		"weekday": 2,
+		"period": [
+			7,
+			8
+		]
+	},
+	{
+		"name": "主题写作：共同体与个人",
+		"lecturer": "付晓红,尚大雷,杨雁鸿,王宇英,葛耘娜,许蕾",
+		"location": "四十八教B202",
+		"week": [
+			3,
+			3
+		],
+		"weekday": 3,
+		"period": [
+			9,
+			10
+		]
+	},
+	{
+		"name": "主题写作：共同体与个人",
+		"lecturer": "葛耘娜",
+		"location": "四十八教B1205",
+		"week": [
+			4,
+			13
+		],
+		"weekday": 5,
+		"period": [
+			1,
+			3
+		]
+	},
+	{
+		"name": "互动艺术创新思维",
+		"lecturer": "宋戈",
+		"location": "四十八教A304",
+		"week": [
+			11,
+			17
+		],
+		"weekday": 2,
+		"period": [
+			9,
+			12
+		]
+	},
+	{
+		"name": "游戏概论",
+		"week": [
+			11,
+			17
+		],
+		"weekday": 4,
+		"period": [
+			9,
+			12
+		],
+		"lecturer": "税琳琳",
+		"location": "四十八教B302"
+	},
+	{
+		"name": "高等数学A",
+		"week": [
+			3,
+			12
+		],
+		"weekday": 5,
+		"period": [
+			5,
+			6
+		],
+		"lecturer": "王传彪",
+		"location": "四十八教B201"
+	},
+	{
+		"name": "高等数学A",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 1,
+		"period": [
+			1,
+			2
+		],
+		"lecturer": "王传彪",
+		"location": "四十八教B201"
+	},
+	{
+		"name": "高等数学A",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 2,
+		"period": [
+			1,
+			2
+		],
+		"lecturer": "王传彪",
+		"location": "四十八教B201"
+	},
+	{
+		"name": "线性代数A",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 1,
+		"period": [
+			3,
+			4
+		],
+		"lecturer": "高永存",
+		"location": "四十八教B302"
+	},
+	{
+		"name": "线性代数A",
+		"week": [
+			3,
+			11
+		],
+		"weekday": 2,
+		"period": [
+			5,
+			6
+		],
+		"lecturer": "高永存",
+		"location": "四十八教B302"
+	},
+	{
+		"name": "大学英语B1",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 4,
+		"period": [
+			1,
+			2
+		],
+		"lecturer": "付卓",
+		"location": "一教303"
+	},
+	{
+		"name": "大学英语B1",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 1,
+		"period": [
+			5,
+			6
+		],
+		"lecturer": "付卓",
+		"location": "一教303"
+	},
+	{
+		"name": "体育(1)",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 2,
+		"period": [
+			3,
+			4
+		],
+		"lecturer": "白敬锋",
+		"location": "null"
+	},
+	{
+		"name": "大学生职业生涯规划",
+		"week": [
+			5,
+			8
+		],
+		"weekday": 4,
+		"period": [
+			3,
+			4
+		],
+		"lecturer": "刘长迎",
+		"location": "四十八教A805"
+	},
+	{
+		"name": "形势与政策(1)",
+		"week": [
+			5,
+			14
+		],
+		"weekday": 3,
+		"period": [
+			5,
+			7
+		],
+		"lecturer": "赵瑞琦",
+		"location": "null"
+	},
+	{
+		"name": "思想道德修养与法律基础",
+		"week": [
+			3,
+			17
+		],
+		"weekday": 4,
+		"period": [
+			5,
+			6
+		],
+		"lecturer": "刘东建",
+		"location": "四十八教A408"
+	}
+]

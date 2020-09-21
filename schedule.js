@@ -48,7 +48,7 @@
 			const now = DateTime.now();
 			const week = WeekDate.now().week;
 			const this_week = this.atWeek(week);
-			return this_week.compare(now) === 1 ? this_week : this.atWeek(week + 1);
+			return this_week && this_week.compare(now) === 1 ? this_week : this.atWeek(week + 1);
 		}
 		end() {
 			const weekdate = new WeekDate(this.week_interval.end.valueOf(), this.weekday);
@@ -172,6 +172,22 @@
 	}
 	Time.now = () => (date => new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()))(new Date());
 
+	const periods = [
+		[[8, 0], [8, 50]],
+		[[9, 0], [9, 50]],
+		[[10, 10], [11, 0]],
+		[[11, 10], [12, 0]],
+		[[13, 30], [14, 20]],
+		[[14, 20], [15, 10]],
+		[[15, 20], [16, 10]],
+		[[16, 10], [16, 50]],
+		[[18, 0], [18, 50]],
+		[[19, 0], [19, 50]],
+		[[20, 0], [20, 50]],
+		[[21, 0], [21, 50]]
+	].map(([begin, end]) => new Period(new Time(...begin), new Time(...end)));
+	const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wesnesday', 'Thursday', 'Friday', 'Saturday'];
+
 	const exportModule = module => Object.defineProperties(window, Object.getOwnPropertyDescriptors(module));
-	exportModule({ Schedule, Lecture, WeekInterval, PeriodInterval, Period, Time});
+	exportModule({ Schedule, Lecture, WeekInterval, PeriodInterval, Period, Time, periods, weekdays });
 }
