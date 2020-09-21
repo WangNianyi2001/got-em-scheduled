@@ -1,0 +1,48 @@
+* { position: relative; }
+
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+section {
+	height: 100%;
+	overflow-y: hidden;
+}
+
+#left {
+	width: max(25%, 300px);
+	background-color: #ddd;
+}
+
+#right {
+	flex: 1;
+}
+
+#control {
+	display: flex;
+}
+
+#control>* {
+	flex: 1;
+	display: block;
+	padding: .5em 0;
+	cursor: pointer;
+	text-align: center;
+	background-color: #ccc;
+	transition-property: background-color;
+	transition-duration: .2s;
+}
+#control>*:hover {
+	background-color: #aaa;
+}
+
+label>input {
+	display: none;
+}

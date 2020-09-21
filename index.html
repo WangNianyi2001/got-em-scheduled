@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<main>
+			<section id="left">
+				<h1>Got 'Em Scheduled</h1>
+				<p id="date"></p>
+				<p id="week"></p>
+				<div id="control">
+					<label id="import">Import<input type="file" accept=".json" /></label>
+					<label id="export">Export<input disabled="true" type="file" /></label>
+				</div>
+				<p id="filename"></p>
+				<div id="upnext">
+					<h1>Up Next</h1>
+					<p>Lecture Name: <span id="name"></span></p>
+					<p>Lecturer: <span id="lecturer"></span></p>
+					<p>Location: <span id="location"></span></p>
+					<p>Week Day: <span id="weekday"></span></p>
+					<p>Begin At: <span id="begin"></span></p>
+				</div>
+			</section>
+			<section id="right"></section>
+		</main>
+		<script src="schedule.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
