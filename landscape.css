@@ -25,11 +25,11 @@ section {
 	flex: 1;
 }
 
-#control {
+.button-row {
 	display: flex;
 }
 
-#control>* {
+.button-row>* {
 	flex: 1;
 	display: block;
 	padding: .5em 0;
@@ -39,7 +39,7 @@ section {
 	transition-property: background-color;
 	transition-duration: .2s;
 }
-#control>*:hover {
+.button-row>*:hover {
 	background-color: #aaa;
 }
 
