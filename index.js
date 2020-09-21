@@ -6,18 +6,34 @@ $('#import>input').addEventListener('change', function() {
 	if(!this.files.length)
 		return;
 	const file = this.files[0];
-	$('#filename').innerText = 'Imported ' + file.name;
+	loadSuccess(file.name);
 	const reader = new FileReader();
-	reader.addEventListener('load', function () {
-		const raw = this.result;
-		try {
-			const schedule = parseSchedule(raw);
-			handleSchedule(schedule);
-		} catch(e) { return loadFail(e); }
-	});
+	reader.addEventListener('load', function () { handleJSON(this.result); });
 	reader.addEventListener('error', loadFail);
 	reader.readAsText(file);
 });
+document.addEventListener('DOMContentLoaded', function() {
+	const req = new XMLHttpRequest();
+	req.addEventListener('readystatechange', function() {
+		if(this.readyState === 4 && this.status === 200) {
+			loadSuccess('default schedule');
+			handleJSON(this.result);
+		}
+	});
+	req.open('GET', 'schedule.json');
+	req.send();
+});
+
+function handleJSON(json) {
+	try {
+		handleSchedule(parseSchedule(json))
+	} catch(e) { return loadFail(e); }
+}
+function loadSuccess(name) { $('#filename').innerText = 'Imported ' + name; }
+function loadFail(e) {
+	console.error(e);
+	$('#filename').innerText = 'Import Failed';
+}
 
 const padZeroLeft = (str, l = 2) => '0'.repeat(l - str.toString().length) + str;
 function handleSchedule(schedule) {
@@ -32,11 +48,6 @@ function handleSchedule(schedule) {
 		$('#weekday').innerText = weekdays[lecture.weekday];
 		$('#begin').innerText = `${time.hour}:${padZeroLeft(time.minute)}`;
 	}
-}
-
-function loadFail(e) {
-	console.error(e);
-	$('#filename').innerText = 'Import Failed';
 }
 
 function parseSchedule(raw) {
