@@ -1,6 +1,7 @@
 * { position: relative; }
 
 html, body {
+	font-size: 5vw;
 	margin: 0;
 	height: 100%;
 }
