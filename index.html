@@ -2,32 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="index.css" />
 		<link rel="stylesheet" href="landscape.css" media="(orientation: landscape)" />
 		<link rel="stylesheet" href="portrait.css" media="(orientation: portrait)" />
 	</head>
 	<body>
 		<h1>Got 'Em Scheduled</h1>
 		<main>
-			<section id="left">
-				<p id="date"></p>
-				<p id="week"></p>
-				<div id="control">
-					<div class="button-row">
-						<label id="import">Import<input type="file" accept=".json" /></label>
-						<label id="export">Export<input disabled="true" type="file" /></label>
-					</div>
-					<p id="filename"></p>
-				</div>
-				<div id="upnext">
-					<h1>Up Next</h1>
-					<p>Lecture Name: <span id="name"></span></p>
-					<p>Lecturer: <span id="lecturer"></span></p>
-					<p>Location: <span id="location"></span></p>
-					<p>Week Day: <span id="weekday"></span></p>
-					<p>Begin At: <span id="begin"></span></p>
+			<section id="upnext">
+				<h2>Up Next</h2>
+				<div id="info">
+					<span class="info" id="name"></span>
+					<span class="info" id="lecturer"></span>
+					<span class="info" id="location"></span>
+					<span class="info" id="period"></span>
 				</div>
 			</section>
-			<section id="right"></section>
+			<section id="today">
+				<h2>Today</h2>
+			</section>
 		</main>
 		<script src="schedule.js"></script>
 		<script src="index.js"></script>

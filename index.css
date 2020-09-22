@@ -1,0 +1,50 @@
+* { position: relative; }
+
+html, body {
+	font-size: 4vw;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: lightgray;
+}
+
+main {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+h1 {
+	margin: 0;
+	padding: .75em 1cm;
+	background-color: black;
+	color: white;
+}
+
+h2 {
+	margin: 0;
+	padding: .75em 1cm;
+	background-color: #222;
+	color: white;
+}
+
+#info {
+	display: flex;
+	flex-direction: column;
+	margin: 1em 1.5em;
+	padding: 1em 0;
+	border-radius: .25em;
+	background-color: white;
+	text-align: center;
+}
+
+#name {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#lecturer {
+	top: -.2em;
+	font-size: .8em;
+}

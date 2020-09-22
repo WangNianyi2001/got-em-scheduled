@@ -14,7 +14,7 @@
 				.map(lecture => ({ lecture, datetime: lecture.next() }))
 				.filter(({ datetime }) => datetime);
 			lectures.sort(({ datetime: a }, { datetime: b }) => a.compare(b));
-			return lectures[0] || null;
+			return lectures[0].lecture || null;
 		}
 	}
 

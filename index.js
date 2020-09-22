@@ -2,16 +2,6 @@
 
 const $ = Document.prototype.querySelector.bind(document);
 
-$('#import>input').addEventListener('change', function() {
-	if(!this.files.length)
-		return;
-	const file = this.files[0];
-	loadSuccess(file.name);
-	const reader = new FileReader();
-	reader.addEventListener('load', function () { handleJSON(this.result); });
-	reader.addEventListener('error', loadFail);
-	reader.readAsText(file);
-});
 document.addEventListener('DOMContentLoaded', function() {
 	const req = new XMLHttpRequest();
 	req.addEventListener('readystatechange', function() {
@@ -27,16 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleJSON(json) {
 	try {
 		handleSchedule(parseSchedule(json));
-	} catch(e) {
-		console.log(json);
-		loadFail(e);
-	}
+	} catch(e) { loadFail(e); }
 }
-function loadSuccess(name) { $('#filename').innerText = 'Imported ' + name; }
-function loadFail(e) {
-	console.error(e);
-	$('#filename').innerText = 'Import Failed';
-}
+function loadSuccess(name) { }
+function loadFail(e) { console.error(e); }
 
 const padZeroLeft = (str, l = 2) => '0'.repeat(l - str.toString().length) + str;
 function handleSchedule(schedule) {
@@ -44,12 +28,11 @@ function handleSchedule(schedule) {
 	if(next === null)
 		return;
 	else {
-		const { lecture } = next, time = next.datetime.time;
-		$('#name').innerText = lecture.name;
-		$('#lecturer').innerText = lecture.lecturer;
-		$('#location').innerText = lecture.location;
-		$('#weekday').innerText = weekdays[lecture.weekday];
-		$('#begin').innerText = `${time.hour}:${padZeroLeft(time.minute)}`;
+		$('#name').innerText = next.name;
+		$('#lecturer').innerText = next.lecturer;
+		$('#location').innerText = next.location;
+		const begin = next.period_interval.begin.begin, end = next.period_interval.end.end;
+		$('#period').innerText = `${begin.hour}:${padZeroLeft(begin.minute)}-${end.hour}:${padZeroLeft(end.minute)}`;
 	}
 }
 
