@@ -14,7 +14,7 @@
 				.map(lecture => ({ lecture, datetime: lecture.next() }))
 				.filter(({ datetime }) => datetime);
 			lectures.sort(({ datetime: a }, { datetime: b }) => a.compare(b));
-			return lectures[0].lecture || null;
+			return lectures.length ? lectures[0].lecture : null;
 		}
 	}
 
@@ -189,5 +189,5 @@
 	const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wesnesday', 'Thursday', 'Friday', 'Saturday'];
 
 	const exportModule = module => Object.defineProperties(window, Object.getOwnPropertyDescriptors(module));
-	exportModule({ Schedule, Lecture, WeekInterval, PeriodInterval, Period, Time, periods, weekdays });
+	exportModule({ Schedule, Lecture, WeekInterval, PeriodInterval, Period, WeekDate, Time, periods, weekdays });
 }

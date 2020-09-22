@@ -39,6 +39,7 @@ h2 {
 	background-color: white;
 	text-align: center;
 }
+#upnext.clear>#info { display: none; }
 
 #name {
 	font-weight: bold;
@@ -48,3 +49,16 @@ h2 {
 	top: -.2em;
 	font-size: .8em;
 }
+
+#clear {
+	margin: 1em auto;
+	padding: .5em .75em;
+	width: fit-content;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	background-color: #55d881;
+	color: white;
+	border-radius: .25em;
+}
+#upnext:not(.clear)>#clear { display: none; }
